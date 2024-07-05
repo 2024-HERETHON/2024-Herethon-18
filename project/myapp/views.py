@@ -23,6 +23,9 @@ from .forms import LoginForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
+def after_login(request):
+    return render(request, "after_login.html")
+
 
 def main(request):
     context = {}

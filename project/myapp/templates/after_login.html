@@ -26,13 +26,16 @@
         </div>
         <form class="form-container">
             <div class="form-text">
-                <h2>Username</h2>
+                <h2>{{ username }}</h2>
             </div>
             <div class="section">
-                <a href="mypage_share.html" >회고용 게시물 공유</a>
+                <a href="{% url 'mypage_share' %}" >회고용 게시물 공유</a>
             </div>
             <div class="section">
-                환경 설정
+                <a href="{% url 'mypage_setting' %}" >환경 설정</a>
+            </div>
+            <div class="section" style="color:#048271;">
+                계정 삭제
             </div>
         </form>
     </main>
