@@ -77,7 +77,7 @@ input[type="text"]:focus {
 }
 
 .project-box {
-    min-width: 12em;
+    min-width: 200px;
     height: auto;
     background-color: #ffffff;
     border: 1px solid #ccc;
@@ -94,14 +94,19 @@ input[type="text"]:focus {
     height: auto;
     margin-bottom: 1em;
 }
-
+/* home.css */
 .project-title {
     font-size: 16px;
     font-weight: bold;
     margin-bottom: 0.5em;
+    max-height: 40px; /* 수정함 */
+    overflow: hidden; /* 수정함 */
+    width: 178.4px; /* 수정함 */
 }
 
 .project-content {
     font-size: 14px;
     color: #666;
+    max-height: 144px; /* 수정함 */
+    overflow: hidden; /* 수정함 */
 }

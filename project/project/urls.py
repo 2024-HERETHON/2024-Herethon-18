@@ -24,6 +24,10 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    # project/urls.py
+    path("after_login/", v.after_login, name="after_login"), # 추가함
+    path("mypage_setting/", v.mypage_setting, name="mypage_setting"), # 추가함
+
     path("admin/", admin.site.urls),
     path("board_create/", v.board_create, name="board_create"),
     path("board_list/", v.board_list, name="board_list"),

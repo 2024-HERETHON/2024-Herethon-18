@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         .comments {
-            margin-top: 20px;
+            margin: 20px 0; /* 수정함 */
             padding: 15px;
             background-color: #f9f9f9;
             border-radius: 8px;
@@ -42,9 +42,10 @@
             border-radius: 4px;
             resize: vertical;
             height: 100px;
-            margin-bottom: 10px;
+            margin: 10px 0; /* 수정함 */
         }
         .comment-form button {
+            margin-bottom: 10px; /* 수정함 */
             padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
@@ -64,7 +65,10 @@
         <nav id="header-nav">
             <a href="{% url 'board_list' %}">공유용 게시판</a>
             <a href="{% if user.is_authenticated %}{% url 'grow_1' %}{% else %}{% url 'login' %}{% endif %}">성장관찰</a>
-            <a href="{% if user.is_authenticated %}{% url 'mypage_setting' %}{% else %}{% url 'login' %}{% endif %}">마이페이지</a>
+            <a href="{% if user.is_authenticated %}{% url 'after_login' %}{% else %}{% url 'login' %}{% endif %}">마이페이지</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">로그아웃</a>
+            {% endif %}
         </nav>
     </header>
     <main>

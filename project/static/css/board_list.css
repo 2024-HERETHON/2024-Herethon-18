@@ -29,6 +29,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 68px;
+    margin-bottom: 68px; /* 수정함 */
 }
 .board-list-post {
     width: 350px;
@@ -43,6 +44,7 @@
 .board-list-img {
     width: 280px;
     height: 210px;
+    object-fit: contain;  /* 수정함 */
 }
 .board-list-title {
     font-size: 24px;
@@ -55,3 +57,20 @@
 .board-list-content {
     overflow: hidden;    
 }
+
+#board-detail2 {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+    /* margin-left: 20px; */
+  }
+  .board-detail-info {
+    font-size: 16px;
+    background-color: black;
+    color: #ffffff;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 6px;
+  }

@@ -130,3 +130,17 @@
     font-size: 14px;
     padding: 10px;
 }
+/* board_detail.css */
+@media (max-width: 1425px) {
+    .board-detail-container {
+        margin: 50px 140px 50px 140px;
+    }
+    #board-detail-content,
+    .board-detail-bottom-box
+     {
+        width: 100%;
+    }
+    .comments {
+        margin: 20px 140px;
+    }
+}

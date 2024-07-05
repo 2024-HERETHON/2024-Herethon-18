@@ -23,6 +23,11 @@ from .forms import LoginForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
 
+# 추가함
+def after_login(request):
+    return render(request, "after_login.html")
+def mypage_setting(request):
+    return render(request, "mypage_setting.html")
 
 def main(request):
     context = {}
