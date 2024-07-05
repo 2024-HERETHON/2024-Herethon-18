@@ -22,8 +22,8 @@
   text-align: center;
   background-color: white;
   padding: 1em 5em;
-  border-radius: 5px;
-  width: 40em;
+  border-radius: 12px;
+  width: 792px;
   margin: 0 auto;
 }
 
@@ -33,14 +33,15 @@
   padding: 1em;
   border: 1px solid #9FCBC9;
   border-radius: 5px;
-  width: 30rem;
+  width: 588px;
   font-size: 14px;
 }
 
 .submit {
     display: flex;
-    justify-content: center;
-    margin: 0.5em 0;
+    justify-content: space-between;
+    margin: 0.5em auto;
+    width: 588px;
 }
 
 .login-form button {
@@ -48,31 +49,24 @@
   width: 14.8rem;
   font-size: 16px;
   font-weight: bold;
-  margin-right: 0.2em;
+  width: 280px;
+  height: 58px;
+  font-size: 24px;
+  line-height: 25px;
 }
 
-/* .signup button{
+.signup a {
     color: #048271;
     border: 2px solid #048271;
     border-radius: 5px;
-} */
-.signup-button {
-    color: #048271;
-    background-color: transparent;
-    border: 2px solid #048271;
-    border-radius: 5px;
-    padding: 0.7em 1em; /* 로그인 버튼과 동일한 패딩 설정 */
-    font-size: 16px;
+    width: 280px;
+    height: 58px;
+    font-size: 24px;
     font-weight: bold;
-    text-decoration: none; /* 링크 밑줄 제거 */
-    display: inline-block; /* 인라인 레벨 요소로 설정하여 다른 요소와 올바르게 배치 */
-    margin-right: 10px; /* 인접한 요소와의 간격을 조절 */
-    cursor: pointer; /* 마우스 오버 시 포인터 모양 변경 */
-}
-
-.signup-button:hover {
-    background-color: #048271;
-    color: white;
+    line-height: 58px;
+    display: inline-block;
+    text-align: center; 
+    text-decoration: none;
 }
 
 .login button {
@@ -80,6 +74,9 @@
     background-color: #048271;
     border: 2px solid #048271;
     border-radius: 5px;
+    width: 280px;
+    height: 58px;
+    font-size: 24px;
 }
 
 .forgot {
@@ -88,18 +85,20 @@
     font-size: 0.9em;
     text-align: end;
     text-decoration: underline;
+    width: 600px;
 }
 
 .social-login {
     display: flex;
-    justify-content: center;
-    margin: 1em 0;
+    justify-content: space-between;
+    margin: 1em auto;
+    width: 588px;
 }
 
 .social-login img {
-    width:auto;
+    width: 236.8px;
     height: 3.4em;
-    margin: 0 10px;
     cursor: pointer;
+    width: 280px;
+    height: 69.19px;
 }
-

@@ -24,6 +24,7 @@
     margin: 0 0 30px 1020px;
 }
 /* 전체 스크롤 말고 .board-list 내에서만 스크롤 되도록 수정해야 함 */
+
 .board-list {
     display: flex;
     flex-wrap: wrap;

@@ -44,8 +44,9 @@ urlpatterns = [
     path("post/<int:id>/", v.board_detail, name="board_detail"),  # URL이 올바른지 확인
     path("mypage_share/", v.mypage_share, name="mypage_share"),
     path("search/", v.search_view, name="search"),
-    path("mypage/", v.mypage_setting, name="mypage_setting"),
+    path("mypage_setting/", v.mypage_setting, name="mypage_setting"),
     path("signup/", v.signup, name="signup"),
+    path("after_login/", v.after_login, name="after_login"),
     path("detail/<int:post_id>/", v.board_detail, name="board_detail"),
     path("detail/<int:post_id>/update/", v.update, name="update"),
     path("detail/<int:post_id>/delete/", v.delete, name="delete"),
@@ -73,4 +74,6 @@ urlpatterns = [
         v.delete_reflection,
         name="delete_reflection",
     ),
+    path("check-email", v.check_email, name="check-email"),
+    path("add-friend", v.add_friend, name="add-friend"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -145,7 +145,7 @@ SOCIALACCOUNT_LOGIN_ON_GET = True
 LOGIN_URL = "login"  # 로그인 페이지 URL 네임을 설정합니다. 이 값은 urls.py에서 설정된 URL 네임과 일치해야 합니다.
 
 # 로그인 후 리디렉션 URL 설정
-LOGIN_REDIRECT_URL = "main"  # 로그인 후 리디렉션될 페이지 URL 네임을 설정합니다.
+LOGIN_REDIRECT_URL = "after_login"
 
 # 로그아웃 후 리디렉션 URL 설정
 LOGOUT_REDIRECT_URL = "main"  # 로그아웃 후 리디렉션될 페이지 URL 네임을 설정합니다.

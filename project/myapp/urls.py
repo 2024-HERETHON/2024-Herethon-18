@@ -22,6 +22,7 @@ urlpatterns = [
     path("search/", v.search_view, name="search"),
     path("mypage/", v.mypage_setting, name="mypage_setting"),
     path("signup/", v.signup, name="signup"),
+    path("after_login/", v.after_login, name="after_login"),
     path("detail/<int:post_id>/", v.board_detail, name="board_detail"),
     path("detail/<int:post_id>/update/", v.update, name="update"),
     path("detail/<int:post_id>/delete/", v.delete, name="delete"),
@@ -31,4 +32,6 @@ urlpatterns = [
         v.comment_delete,
         name="comment_delete",
     ),
+    path("check-email", v.check_email, name="check-email"),
+    path("add-friend", v.add_friend, name="add-friend"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

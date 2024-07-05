@@ -24,6 +24,28 @@
             {% endif %}
         </nav>
     </header>
+        <style>
+            .graph-container {
+    display: flex;
+    justify-content: center;  /* 수평 중앙 정렬 */
+    align-items: center;      /* 수직 중앙 정렬 */
+    width: 100%;              /* 부모 요소의 전체 너비 */
+    max-width: 800px;         /* 최대 너비 설정 */
+    height: 335px;            /* 높이 설정 */
+    border-radius: 20px;
+    background-color: #048271;
+    margin: 24px auto;        /* 상단 마진 및 수평 중앙 정렬 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+canvas#likesGraph {
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 335px; /* graph-container의 세로 길이와 일치시킴 */
+}
+</style>
+
     <main>
         <div class="Big-container">
             <div class="post-container">
@@ -113,6 +135,8 @@
                         }]
                     },
                     options: {
+                        responsive: true, // 반응형 설정
+                        maintainAspectRatio: false, // 캔버스 비율 유지하지 않음
                         scales: {
                             y: {
                                 beginAtZero: true

@@ -59,12 +59,12 @@
             </div>
 
             <div class="proreflect-container">
-                <h1 class="proTitle-container">ProReflect 작성</h1>
+                <h1 class="proTitle-container">회고 작성</h1>
                 <form action="{% url 'save_reflection' post.id %}" method="post">
                     {% csrf_token %}
                     <textarea name="reflection_content" class="reflecttext-container" placeholder="회고 내용을 입력하세요..."></textarea>
                     <button type="submit" class="proreflect">
-                        <h1 class="text-container">ProReflect 게시</h1>
+                        <h1 class="text-container">회고 게시</h1>
                     </button>
                 </form>
             </div>

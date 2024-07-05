@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from myapp.forms import CommentForm
-from .models import BoardPost
+from .models import BoardPost, Friendship
 from django.views.decorators.http import require_POST
 import json
 from django.utils import timezone
@@ -22,6 +22,7 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
+import logging
 
 # 추가함
 def after_login(request):
@@ -341,6 +342,11 @@ def logout_view(request):
 
 
 @login_required
+def after_login(request):
+    return render(request, "after_login.html", {"username": request.user.username})
+
+
+@login_required
 def board_detail(request, post_id):
     post = get_object_or_404(BoardPost, pk=post_id)
     comments = Comment.objects.filter(post=post)
@@ -429,3 +435,41 @@ def delete_reflection(request, reflection_id):
             "some_view_name"
         )  # Redirect to a confirmation page or the main page
     return render(request, "confirm_delete.html", {"reflection": reflection})
+
+
+logger = logging.getLogger(__name__)
+
+
+@login_required
+@require_POST
+def check_email(request):
+    data = json.loads(request.body)
+    email = data.get("email")
+    users = User.objects.filter(email=email)
+    if users.exists():
+        return JsonResponse(
+            {"status": "success", "message": "이메일이 확인되었습니다."}
+        )
+    else:
+        return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})
+
+
+@login_required
+@require_POST
+def add_friend(request):
+    data = json.loads(request.body)
+    email = data.get("email")
+    users = User.objects.filter(email=email)
+    if users.exists():
+        friend = users.first()  # Take the first user if multiple exist
+        if friend != request.user:  # Prevent adding self as friend
+            Friendship.objects.get_or_create(creator=request.user, friend=friend)
+            return JsonResponse(
+                {"status": "success", "message": "친구로 추가되었습니다!"}
+            )
+        else:
+            return JsonResponse(
+                {"status": "fail", "message": "자기 자신을 친구로 추가할 수 없습니다."}
+            )
+    else:
+        return JsonResponse({"status": "fail", "message": "해당 사용자가 없습니다!"})

@@ -96,3 +96,16 @@ class Reflection(models.Model):
 
     def __str__(self):
         return self.content[:50]
+
+
+class Friendship(models.Model):
+    creator = models.ForeignKey(
+        User, related_name="friendship_creator_set", on_delete=models.CASCADE
+    )
+    friend = models.ForeignKey(
+        User, related_name="friend_set", on_delete=models.CASCADE
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.creator.username} is friends with {self.friend.username}"

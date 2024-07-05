@@ -28,17 +28,17 @@
     flex: 0 0 6em;
     text-align: left; 
     font-weight: bold;
-    font-size: 24px;
+    font-size: 19px;
 }
 
 .signup-form input[type="text"],
-.signup-form input[type="password"] {
+.signup-form input[type="password"],
+.signup-form input[type="email"] {
     margin: 0.5em 0;
     padding: 1em;
     border: 1px solid #9FCBC9;
     border-radius: 5px;
-    font-size: 14px;
-    width: 540px;
+    width: 500px;
     height: 50px;
 }
 
@@ -46,10 +46,12 @@
     color: #048271;
     border: 2px solid #048271;
     border-radius: 5px;
-    width: 228px;
+    margin-top: 1em;
+    width: 280px;
     font-size: 24px;
-    height: 58px;
+    height: 50px;
     font-weight: bold;
+    font-size: 21px ;
     line-height: 28px;
 }
 

@@ -55,9 +55,11 @@
             </div>
 
             <div class="proreflect-container">
-                <h1 class="proTitle-container">ProReflect: {{ reflection.post.title }}</h1>
+                <h1 class="proTitle-container">회고: {{ reflection.post.title }}</h1>
                 <div class="addition-info">
                     <div id="edit-delete-buttons">
+                        <button>수정하기</button>
+                        <button>삭제하기</button>
                     </div>
                     <div class="date-container">{{ reflection.created_at|date:"Y.m.d" }}</div>
                     <div class="reflect-container">
